@@ -1,17 +1,47 @@
 import CustomImage from "./CustomImage";
 
 export default function RecipeDetail({ recipe, onClose }) {
-    return (
-        <div className="recipe-detail section">
-            <h2>{recipe.title}</h2>
-            <CustomImage imgSrc={recipe.image} pt="50%" />
-            <div className="author-section">
-                <img className="auther-img" src={recipe.authorImg} alt="author" />
-                <p><strong>By:</strong> Chef</p>
-            </div>
-            <p><a href={recipe.url} target="_blank" rel="noopener noreferrer">View full recipe</a></p>
+  return (
+    <div className="recipe-detail section">
+      {/* Title */}
+      <h2 className="recipe-title">{recipe.name}</h2>
 
-            <button className="btn" onClick={onClose}>← Hide Recipe</button>
-        </div>
-    );
+      {/* Image */}
+      <CustomImage imgSrc={recipe.image} pt="50%" />
+
+      {/* Meta Information */}
+      <div className="recipe-meta-detail">
+        <p><strong>Cuisine:</strong> {recipe.cuisine}</p>
+        <p><strong>Difficulty:</strong> {recipe.difficulty}</p>
+        <p><strong>Servings:</strong> {recipe.servings}</p>
+      </div>
+
+      {/* Ingredients List */}
+      <div className="recipe-section">
+        <h3>🧂 Ingredients</h3>
+        <ul className="recipe-list">
+          {recipe.ingredients.map((ing, idx) => (
+            <li key={idx}>{ing}</li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Instructions List */}
+      <div className="recipe-section">
+        <h3>📋 Instructions</h3>
+        <ol className="recipe-steps">
+          {recipe.instructions.map((step, idx) => (
+            <li key={idx}>{step}</li>
+          ))}
+        </ol>
+      </div>
+
+      {/* Close Button (optional) */}
+      {onClose && (
+        <button className="btn back-btn" onClick={onClose}>
+          ← Hide Recipe
+        </button>
+      )}
+    </div>
+  );
 }
