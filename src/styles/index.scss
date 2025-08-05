@@ -577,3 +577,85 @@ button {
   border: 2px solid var(--primary-color);
   box-shadow: 0 0 10px var(--primary-color);
 }
+//recipe css
+.recipe-detail {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.recipe-header {
+  text-align: center;
+}
+
+.recipe-title {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #333;
+}
+
+.recipe-meta-info {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.meta-item {
+  font-size: 1rem;
+  color: #444;
+}
+
+.recipe-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.ingredients,
+.instructions {
+  flex: 1;
+}
+
+.recipe-section h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.recipe-list,
+.recipe-steps {
+  padding-left: 1.5rem;
+}
+
+.recipe-list li,
+.recipe-steps li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Two-column layout on wider screens */
+@media (min-width: 768px) {
+  .recipe-content {
+    flex-direction: row;
+    gap: 4rem;
+  }
+}
+
+.recipe-footer {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.btn.back-btn {
+  padding: 0.6rem 1.2rem;
+  background-color: #f04e30;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
